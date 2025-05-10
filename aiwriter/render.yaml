@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: aiwriter
+    env: node
+    buildCommand: cd aiwriter && npm install && npm run build
+    startCommand: cd aiwriter && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.19.10 

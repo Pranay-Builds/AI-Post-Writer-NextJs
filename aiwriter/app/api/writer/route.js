@@ -14,7 +14,7 @@ export async function POST(req) {
         const body = await req.json();
         const { topic, tone, length, targetAudience, keywords, useCase } = body;
 
-        console.log("API called with:", body);
+       
 
         if (!topic || !tone || !length) {
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
@@ -46,7 +46,7 @@ export async function POST(req) {
 
         return NextResponse.json({generatedContent})
     } catch (error) {
-        console.log('Error generating content', error)
+        
         return new NextResponse({message:'Error generating content', status: 500 })
     }
 
